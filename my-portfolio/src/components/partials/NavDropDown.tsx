@@ -6,17 +6,19 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavDropDown = () => {
-  const [position, setPosition] = React.useState("home");
+  const pathName = usePathname();
+  const [position, setPosition] = React.useState<string>();
+
+  React.useEffect(() => setPosition(pathName), [pathName]);
 
   return (
     <DropdownMenu>
@@ -26,9 +28,8 @@ const NavDropDown = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <DropdownMenuRadioItem value="home">
+        <DropdownMenuRadioGroup value={position}>
+          <DropdownMenuRadioItem value="/">
             <Link
               href="/"
               className="relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-current after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
@@ -36,15 +37,15 @@ const NavDropDown = () => {
               HOME
             </Link>
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="my-project">
+          <DropdownMenuRadioItem value="/my-projects">
             <Link
-              href="/my-project"
+              href="/my-projects"
               className="relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-current after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               My Projects
             </Link>
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="tech-stack">
+          <DropdownMenuRadioItem value="/tech-stack">
             <Link
               href="/tech-stack"
               className="relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-current after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
@@ -52,7 +53,7 @@ const NavDropDown = () => {
               Tech Stack
             </Link>
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="about-me">
+          <DropdownMenuRadioItem value="/about-me">
             <Link
               href="/about-me"
               className="relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-current after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
@@ -60,7 +61,7 @@ const NavDropDown = () => {
               About Me
             </Link>
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="contact-me">
+          <DropdownMenuRadioItem value="/contact-me">
             <Link
               href="/contact-me"
               className="relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-current after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
