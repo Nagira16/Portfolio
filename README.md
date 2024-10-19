@@ -16,3 +16,7 @@ Welcome to my personal portfolio website! This project showcases my skills and p
 - shadcn/ui
 
 ## Installation
+1. Clone the repository
+2. cd my-portfolio
+3. npm install
+4. npm run start
