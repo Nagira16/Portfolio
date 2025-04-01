@@ -1,5 +1,5 @@
 import Emoji from "@/components/animations/Emoji";
-import { Slide } from "@/components/animations/Slide";
+import { HorizontalSlide } from "@/components/animations/HorizontalSlide";
 import nextIcon from "@/images/nextjs-icon.png";
 import reactIcon from "@/images/react-svgrepo-com.svg";
 import nodejsIcon from "@/images/node-js-svgrepo-com.svg";
@@ -39,7 +39,7 @@ const HoverLinks: HoverLink[] = [
 
 const IntroPage = (): JSX.Element => {
   return (
-    <div className="relative z-20 min-h-screen flex flex-col items-center text-center space-y-16 px-4">
+    <div className="relative z-20 min-h-screen grid place-content-center text-center space-y-16 px-4">
       {/* Section 1 */}
       <section className="container flex flex-col items-center space-y-10">
         <article className="flex flex-col sm:flex-row justify-center items-center sm:space-x-2">
@@ -52,7 +52,7 @@ const IntroPage = (): JSX.Element => {
         </article>
 
         <article className="relative">
-          <Slide
+          <HorizontalSlide
             text={
               <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center group">
                 <p className="transition-opacity duration-300 group-hover:opacity-50">
@@ -89,7 +89,7 @@ const IntroPage = (): JSX.Element => {
       {/* Section 2 */}
       <section className="container flex flex-col md:flex-row justify-center items-center space-y-10 md:space-y-0 md:space-x-10">
         <article>
-          <Slide
+          <HorizontalSlide
             text={
               <div className="space-y-8 font-semibold">
                 <p>
