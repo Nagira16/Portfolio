@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { JSX, ReactNode } from "react";
 
-export const Slide = ({
+export const HorizontalSlide = ({
   text,
   initPosition,
 }: {
