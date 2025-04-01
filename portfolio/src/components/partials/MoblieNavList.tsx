@@ -2,7 +2,7 @@
 
 import { AlignJustify } from "lucide-react";
 import { JSX, useState } from "react";
-import { NavLink } from "../shared/Navbar";
+import { NavLink } from "../layouts/Navbar";
 import Link from "next/link";
 
 const MoblieNavList = ({ NavLinks }: { NavLinks: NavLink[] }): JSX.Element => {

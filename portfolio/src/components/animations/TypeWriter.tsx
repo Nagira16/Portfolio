@@ -1,11 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { JSX } from "react";
 
-const TypeWriter = ({ text }: { text: string }) => {
+const TypeWriter = ({
+  text,
+  font_size,
+}: {
+  text: string;
+  font_size: string;
+}): JSX.Element => {
   return (
     <motion.p
-      className="text-2xl font-mono"
+      className={`${font_size} font-mono text-white`}
       initial={{ width: "0ch" }}
       animate={{ width: `${text.length}ch` }}
       transition={{
