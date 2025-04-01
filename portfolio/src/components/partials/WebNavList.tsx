@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NavLink } from "../shared/Navbar";
+import { NavLink } from "../layouts/Navbar";
 import { JSX } from "react";
 
 const WebNavList = ({ NavLinks }: { NavLinks: NavLink[] }): JSX.Element => {
