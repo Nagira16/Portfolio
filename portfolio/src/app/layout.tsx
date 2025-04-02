@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
+import { JSX } from "react";
 
 const ebGaramond = EB_Garamond({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
     <html lang="en">
       <body

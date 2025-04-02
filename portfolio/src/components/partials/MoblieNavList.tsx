@@ -15,7 +15,7 @@ const MoblieNavList = ({ NavLinks }: { NavLinks: NavLink[] }): JSX.Element => {
       </button>
 
       {isOpen && (
-        <ul className="absolute top-16 right-0 w-32 space-y-5 backdrop-blur-xs p-4 rounded">
+        <ul className="absolute top-16 right-0 w-32 space-y-5 backdrop-blur-xs p-4">
           {NavLinks.map((link) => (
             <li
               key={link.path}

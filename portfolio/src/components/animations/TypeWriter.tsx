@@ -10,11 +10,13 @@ const TypeWriter = ({
   text: string;
   font_size: string;
 }): JSX.Element => {
+  const trimmedText = text.replace(/\s+/g, "");
+
   return (
     <motion.p
       className={`${font_size} font-mono text-white`}
       initial={{ width: "0ch" }}
-      animate={{ width: `${text.length}ch` }}
+      animate={{ width: `${trimmedText.length}ch` }}
       transition={{
         duration: 2,
         ease: "linear",

@@ -1,8 +1,5 @@
 import Emoji from "@/components/animations/Emoji";
-import { HorizontalSlide } from "@/components/animations/HorizontalSlide";
-import nextIcon from "@/images/nextjs-icon.png";
-import reactIcon from "@/images/react-svgrepo-com.svg";
-import nodejsIcon from "@/images/node-js-svgrepo-com.svg";
+import HorizontalSlide from "@/components/animations/HorizontalSlide";
 import { JSX } from "react";
 import HoverContent from "@/components/partials/HoverContent";
 
@@ -16,21 +13,21 @@ export interface HoverLink {
 const HoverLinks: HoverLink[] = [
   {
     title: "React.js",
-    icon: reactIcon,
+    icon: "/react-logo.svg",
     link: "tech-stack",
     description: "A JavaScript library for building user interfaces.",
     officialsite: "https://reactjs.org/",
   },
   {
     title: "Next.js",
-    icon: nextIcon,
+    icon: "/nextjs-logo.png",
     link: "tech-stack",
     description: "A full-stack React framework for production.",
     officialsite: "https://nextjs.org/",
   },
   {
     title: "Node.js",
-    icon: nodejsIcon,
+    icon: "/node-js-logo.svg",
     link: "tech-stack",
     description: "A JavaScript runtime for building server-side applications.",
     officialsite: "https://nodejs.org/",
@@ -39,7 +36,7 @@ const HoverLinks: HoverLink[] = [
 
 const IntroPage = (): JSX.Element => {
   return (
-    <div className="relative z-20 min-h-screen grid place-content-center text-center space-y-16 px-4">
+    <div className="relative z-20 min-h-screen grid place-content-center text-center space-y-16 px-4 pb-5">
       {/* Section 1 */}
       <section className="container flex flex-col items-center space-y-10">
         <article className="flex flex-col sm:flex-row justify-center items-center sm:space-x-2">
@@ -100,7 +97,7 @@ const IntroPage = (): JSX.Element => {
                   {HoverLinks.map((link, i) => (
                     <li
                       key={i}
-                      className="text-lg sm:text-2xl grid place-items-center transition-transform duration-500 hover:scale-125"
+                      className="text-lg sm:text-2xl grid place-items-center grayscale-100 transition-transform duration-500 hover:scale-125 active:scale-110 hover:grayscale-0"
                     >
                       <HoverContent
                         link={link.link}
