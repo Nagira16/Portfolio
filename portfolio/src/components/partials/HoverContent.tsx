@@ -25,7 +25,13 @@ const HoverContent = ({
           className="grid place-items-center cursor-pointer"
           onClick={() => router.push(link)}
         >
-          <Image src={icon} alt={title} className="size-16 sm:size-20" />
+          <Image
+            src={icon}
+            alt={title}
+            width={50}
+            height={50}
+            className="size-16 sm:size-20"
+          />
         </div>
       </HoverCardTrigger>
       <HoverCardContent className="w-80 grid place-items-center rounded-lg border border-gray-600 bg-black p-4">

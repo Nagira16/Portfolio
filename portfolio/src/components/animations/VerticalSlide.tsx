@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { JSX, ReactNode } from "react";
 
-const HorizontalSlide = ({
+const VerticalSlide = ({
   text,
   initPosition,
 }: {
@@ -12,10 +12,9 @@ const HorizontalSlide = ({
 }): JSX.Element => {
   return (
     <motion.div
-      className="text-2xl text-white w-full"
-      initial={{ x: initPosition, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: false }}
+      initial={{ y: initPosition, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
         duration: 1,
         ease: "easeOut",
@@ -26,4 +25,4 @@ const HorizontalSlide = ({
   );
 };
 
-export default HorizontalSlide;
+export default VerticalSlide;
