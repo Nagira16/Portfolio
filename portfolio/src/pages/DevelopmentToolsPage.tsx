@@ -68,7 +68,7 @@ const DevelopmentToolsPage = (): JSX.Element => {
                 const title: string = list.title;
                 return (
                   <Link key={i} href={list.officalSite} target="_blank">
-                    <div className="flex flex-col justify-center items-center space-y-3 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-150 hover:drop-shadow-[0_0_10px_#61DAFB]">
+                    <div className="flex flex-col justify-center items-center space-y-3 transition-all duration-300 grayscale hover:grayscale-0 hover:scale-125 hover:drop-shadow-[0_0_10px_#61DAFB] active:scale-110">
                       <Image
                         src={list.link}
                         alt={`${list.title} Logo`}

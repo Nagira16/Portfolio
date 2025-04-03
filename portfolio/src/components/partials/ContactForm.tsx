@@ -1,14 +1,12 @@
 "use client";
 
 import { sendMessage } from "@/actions/sendMessage";
-import { div } from "framer-motion/client";
 import { useActionState, useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { Skeleton } from "../ui/skeleton";
 
 export default function ContactForm() {
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const [data, formAction, isLoading] = useActionState(sendMessage, {
+  const [state, formAction, isLoading] = useActionState(sendMessage, {
     success: false,
     message: null,
   });
@@ -16,17 +14,17 @@ export default function ContactForm() {
   useEffect(() => setIsMounted(true), []);
 
   useEffect(() => {
-    if (data.message) {
+    if (state.message) {
       Swal.fire({
-        text: data.message,
-        icon: data.success ? "success" : "error",
+        text: state.message,
+        icon: state.success ? "success" : "error",
         toast: true,
         position: "top-right",
         timer: 3000,
         showConfirmButton: false,
       });
     }
-  }, [data.message]);
+  }, [state.message]);
 
   if (!isMounted) {
     return (
@@ -42,12 +40,14 @@ export default function ContactForm() {
         type="text"
         name="name"
         placeholder="Your Name"
+        required
         className="border-b border-gray-600 bg-transparent p-2 focus:outline-none focus:border-blue-400"
       />
       <input
         type="email"
         name="email"
         placeholder="Your Email"
+        required
         className="border-b border-gray-600 bg-transparent p-2 focus:outline-none focus:border-blue-400"
       />
       <textarea
