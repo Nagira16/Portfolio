@@ -3,3 +3,8 @@ export interface TechList {
   title: string;
   officalSite: string;
 }
+
+export interface sendMessageType {
+  success: boolean;
+  message: string | null;
+}
